@@ -1,14 +1,15 @@
 #if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using TRnK.Toolkit;
 using UnityEditor;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     internal partial class SignalTrackerWindow : EditorWindow
     {
-        [MenuItem("Tools/Neko Framework/Signal Tracker")]
+        [MenuItem("Tools/TRnK/Signal Tracker")]
         public static void ShowWindow()
         {
             GetWindow<SignalTrackerWindow>("Signal Tracker");
@@ -157,7 +158,7 @@ namespace NekoSignal
             EnsureStyles();
             try
             {
-                int newIndex = NekoLib.EditorTabBar.Draw((int)_activeTab, new[] { "Subscription Monitor", "Signal Log", "Memory Leaks" }, 24f);
+                int newIndex = EditorTabBar.Draw((int)_activeTab, new[] { "Subscription Monitor", "Signal Log", "Memory Leaks" }, 24f);
                 _activeTab = (Tab)newIndex;
 
                 EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);

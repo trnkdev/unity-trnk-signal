@@ -6,7 +6,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>Lightweight in-memory log store for editor visualization. Compiled out in player builds.</summary>
     internal static class SignalLogStore
@@ -102,7 +102,7 @@ namespace NekoSignal
                         var m = f.GetMethod();
                         var dt = m?.DeclaringType;
                         if (dt == null) continue;
-                        if ((dt.Namespace ?? string.Empty).StartsWith("NekoSignal")) continue;
+                        if ((dt.Namespace ?? string.Empty).StartsWith("TRnK.Signal")) continue;
 
                         entry.ScriptFilePath = f.GetFileName();
                         entry.ScriptLine = f.GetFileLineNumber();

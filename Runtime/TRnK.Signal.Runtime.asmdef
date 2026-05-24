@@ -1,6 +1,6 @@
 {
-    "name": "NekoSignal.Runtime",
-    "rootNamespace": "NekoSignal",
+    "name": "TRnK.Signal.Runtime",
+    "rootNamespace": "TRnK.Signal",
     "references": [
         "GUID:22a704979ba6f464ea6e8bb476cdcc2b"
     ],

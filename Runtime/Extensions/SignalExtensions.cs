@@ -1,8 +1,8 @@
 using System;
-using NekoLib.Logger;
+using TRnK.Logger;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     public static class SignalExtensions
     {

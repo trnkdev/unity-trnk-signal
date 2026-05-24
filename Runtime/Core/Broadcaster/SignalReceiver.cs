@@ -1,7 +1,7 @@
 using System;
-using NekoLib.Logger;
+using TRnK.Logger;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     public sealed class SignalReceiver : IDisposable
     {

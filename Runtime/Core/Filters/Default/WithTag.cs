@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>Allow only subscribers whose owner GameObject has the given Unity tag.</summary>
     public sealed class WithTag : ISignalFilter

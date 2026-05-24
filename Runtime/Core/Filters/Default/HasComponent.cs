@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>Allow only subscribers whose owner has component T.</summary>
     public sealed class HasComponent<T> : ISignalFilter where T : Component

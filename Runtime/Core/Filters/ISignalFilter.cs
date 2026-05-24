@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>A reusable filter evaluated against a subscriber's owner.</summary>
     public interface ISignalFilter

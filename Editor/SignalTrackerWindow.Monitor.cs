@@ -1,11 +1,11 @@
 #if UNITY_EDITOR
 using System;
 using System.Linq;
-using NekoLib.Logger;
+using TRnK.Logger;
 using UnityEditor;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     internal partial class SignalTrackerWindow
     {

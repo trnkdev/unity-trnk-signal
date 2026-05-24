@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NekoLib.Logger;
+using TRnK.Logger;
 using UnityEditor;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     internal static partial class SignalBroadcaster
     {

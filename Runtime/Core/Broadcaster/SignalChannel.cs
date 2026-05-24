@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using NekoLib.Logger;
+using TRnK.Logger;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     internal interface ISignalChannel
     {

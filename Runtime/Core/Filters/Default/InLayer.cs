@@ -1,7 +1,7 @@
-using NekoLib.Extensions;
+using TRnK.Extensions;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>Allow only subscribers whose owner GameObject is on the specified layer.</summary>
     public sealed class InLayer : ISignalFilter

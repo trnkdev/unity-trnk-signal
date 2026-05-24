@@ -1,8 +1,8 @@
 using System;
-using NekoLib.ColorPalette;
-using NekoLib.Extensions;
+using TRnK.ColorPalette;
+using TRnK.Extensions;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>
     /// Marks a method as a signal handler.

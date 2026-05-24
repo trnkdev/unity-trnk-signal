@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using NekoLib.ColorPalette;
-using NekoLib.Extensions;
-using NekoLib.Logger;
+using TRnK.ColorPalette;
+using TRnK.Extensions;
+using TRnK.Logger;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     [UnityEngine.Scripting.Preserve]
     internal static partial class SignalBroadcaster
@@ -98,7 +98,7 @@ namespace NekoSignal
                 {
                     var f = st.GetFrame(i);
                     var ns = f.GetMethod()?.DeclaringType?.Namespace ?? string.Empty;
-                    if (!string.IsNullOrEmpty(f.GetFileName()) && !ns.StartsWith("NekoSignal"))
+                    if (!string.IsNullOrEmpty(f.GetFileName()) && !ns.StartsWith("TRnK.Signal"))
                     {
                         file = f.GetFileName();
                         line = f.GetFileLineNumber();

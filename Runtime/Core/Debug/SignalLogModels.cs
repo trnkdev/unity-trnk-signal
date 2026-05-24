@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     [Serializable]
     internal class SignalInvocationLog

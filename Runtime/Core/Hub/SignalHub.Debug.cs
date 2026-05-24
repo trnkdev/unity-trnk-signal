@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     public static partial class SignalHub
     {

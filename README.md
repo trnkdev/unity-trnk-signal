@@ -1,4 +1,4 @@
-# Neko Signal
+# TRnK Signal
 
 A lightweight, type-safe signal (event) bus for Unity. Supports attribute-based handlers, priority ordering, and subscriber-side filtering — with zero reflection overhead at emit time.
 
@@ -6,16 +6,16 @@ A lightweight, type-safe signal (event) bus for Unity. Supports attribute-based 
 
 ### Via Git URL
 
-1. Install NekoLib first via Unity Package Manager:
+1. Install TRnK.Toolkit first via Unity Package Manager:
 
 ```
-https://github.com/boobosua/unity-nekolib.git
+https://github.com/boobosua/unity-trnk-toolkit.git
 ```
 
-2. Then add NekoSignal:
+2. Then add TRnK.Signal:
 
 ```
-https://github.com/boobosua/unity-neko-signal.git
+https://github.com/boobosua/unity-trnk-signal.git
 ```
 
 ## Features
@@ -27,7 +27,7 @@ https://github.com/boobosua/unity-neko-signal.git
 - **Emitter-side filters** — `ISignalFilter` lets the emitter restrict which subscribers receive a signal. Three built-in filters ship out of the box: `HasComponent<T>`, `InLayer`, and `WithTag`.
 - **Fluent filter API** — `signal.ConfigureFilters().Require(f1).Require(f2).Emit()` for one-off filtered emits.
 - **Zero allocation on hot paths** — pre-allocate filter arrays; the dispatcher accepts `ISignalFilter[]` directly.
-- **Editor tooling** — Signal Tracker window (`Window > Neko Framework > Signal Tracker`) with live subscription monitor, emit log, and memory leak detector.
+- **Editor tooling** — Signal Tracker window (`Window > TRnK Framework > Signal Tracker`) with live subscription monitor, emit log, and memory leak detector.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ https://github.com/boobosua/unity-neko-signal.git
 Signals **must** be `struct` — the subscribe/emit generics enforce `where T : struct, ISignal`. Use `readonly struct` for immutability.
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 public readonly struct PlayerDied : ISignal { }
 
@@ -55,10 +55,10 @@ public readonly struct PlayerHealthChanged : ISignal
 
 ### 2. Subscribe with `[OnSignal]`
 
-Decorate handler methods with `[OnSignal]`, then call `SignalHub.Bind(this)` / `SignalHub.Unbind(this)`. NekoSignal discovers all matching methods via reflection at bind time.
+Decorate handler methods with `[OnSignal]`, then call `SignalHub.Bind(this)` / `SignalHub.Unbind(this)`. TRnK.Signal discovers all matching methods via reflection at bind time.
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 public class UIHealthBar : MonoBehaviour
 {
@@ -94,7 +94,7 @@ SignalBus.Emit(new PlayerHealthChanged(health, maxHealth));
 Higher priority values are invoked first. Default is `0`. Handlers at the same priority are called in subscription order (FIFO).
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 // Attribute-based — runs before default-priority handlers
 [OnSignal(priority: 10)]
@@ -112,7 +112,7 @@ Priority affects dispatch order only. Filters are evaluated per-subscriber regar
 Use `Listen` when you need to subscribe outside of `OnEnable/OnDisable`, conditionally, or for a limited lifetime. It returns a `SignalReceiver` — call `Dispose()` to unsubscribe. `SignalReceiver.IsActive` is `true` until `Dispose()` is called.
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 public class TemporaryListener : MonoBehaviour
 {
@@ -141,7 +141,7 @@ Filters run on the emitter side and restrict delivery to subscribers whose `Mono
 **One-off (fluent):**
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 new EnemySpotted(target)
     .ConfigureFilters()
@@ -158,10 +158,10 @@ this.Emit(new EnemySpotted(target), new TeamFilter(teamId), new ActiveFilter());
 
 ### Built-in Filters
 
-NekoSignal ships three ready-to-use `ISignalFilter` implementations:
+TRnK.Signal ships three ready-to-use `ISignalFilter` implementations:
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 // Only subscribers whose owner has component T
 new HasComponent<Rigidbody>()
@@ -176,7 +176,7 @@ new WithTag("Player")
 ### Creating a Custom Filter
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 using UnityEngine;
 
 public sealed class TeamFilter : ISignalFilter
@@ -219,7 +219,7 @@ private void Update()
 
 ## Signal Tracker
 
-Open via `Window > Neko Framework > Signal Tracker`.
+Open via `Window > TRnK Framework > Signal Tracker`.
 
 | Tab                      | What it shows                                                                                                                          |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -241,7 +241,7 @@ Forgetting `SignalHub.Unbind` keeps the delegate alive indefinitely. Check the *
 To query how many subscribers are active for a given signal type at runtime:
 
 ```csharp
-using NekoSignal;
+using TRnK.Signal;
 
 // From a MonoBehaviour
 int count = this.GetSubscriberCount<PlayerHealthChanged>();
@@ -252,4 +252,4 @@ int count = SignalBus.GetSubscriberCount<PlayerHealthChanged>();
 
 ## Requirements
 
-Unity 6 or later. Requires NekoLib.
+Unity 6 or later. Requires TRnK.

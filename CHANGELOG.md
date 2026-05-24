@@ -31,7 +31,7 @@
 
 ### Priority Support
 
-- Added support for subscription priorities in NekoSignal.
+- Added support for subscription priorities in TRnK.Signal.
 
 ## [1.2.1] - 2025-09-26
 
@@ -58,8 +58,8 @@
 
 ### Refactor Colors
 
-- Refactor color codes along with NekoLib.
-- Available only for NekoLib 1.6.3+.
+- Refactor color codes along with TRnK.
+- Available only for TRnK.Toolkit 1.6.3+.
 
 ## [1.0.1] - 2025-08-23
 

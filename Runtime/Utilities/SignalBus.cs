@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     public static class SignalBus
     {

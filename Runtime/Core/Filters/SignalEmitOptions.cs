@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using NekoLib.Extensions;
+using TRnK.Extensions;
 
-namespace NekoSignal
+namespace TRnK.Signal
 {
     /// <summary>Fluent builder for filtered signal emitting.</summary>
     public sealed class SignalEmitOptions<T> where T : struct, ISignal
