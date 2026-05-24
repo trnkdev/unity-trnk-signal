@@ -9,13 +9,13 @@ A lightweight, type-safe signal (event) bus for Unity. Supports attribute-based 
 1. Install TRnK.Toolkit first via Unity Package Manager:
 
 ```
-https://github.com/boobosua/unity-trnk-toolkit.git
+https://github.com/trnkdev/unity-trnk-toolkit.git
 ```
 
 2. Then add TRnK.Signal:
 
 ```
-https://github.com/boobosua/unity-trnk-signal.git
+https://github.com/trnkdev/unity-trnk-signal.git
 ```
 
 ## Features
